@@ -294,7 +294,7 @@ if data_file is not None:
                         smeasure3.empty()
                         user_input = {}
                         count = 0
-                        for feature in features:
+                        for feature in selected_features:
                             if 'zipcode' in feature:
                                 init = 90210
                                 step = 1
