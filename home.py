@@ -181,7 +181,8 @@ def set_predict():
 sheader.header('Start by uploading the data file:')
 with sidebox:
     if data_file is None:    
-        data_file = sidebox.file_uploader('', type=['csv'], label_visibility='hidden')
+        #data_file = sidebox.file_uploader('', type=['csv'], label_visibility='hidden')
+        data_file = 'data.csv'
 
 if data_file is not None:
     data = get_data(data_file)
@@ -253,7 +254,7 @@ if data_file is not None:
                     mheader.write('')
                     mtarget.write('')
                     sheader.header('Saving model...')
-                    mainbox.write('docker-compose.yaml')
+                    mainbox.write('')
                     fit_measure = get_model_fit(data, target, selected_features, XGBmodel)
                     sheader.header('Model has been trained and saved! ✅')
                     mainbox.write('')
