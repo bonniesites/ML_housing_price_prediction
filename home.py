@@ -20,12 +20,12 @@ st.set_page_config(
     page_icon=":cityscape:"
 )
 
-hide_default_format = """
-       <style>
-       #MainMenu {visibility: hidden; }
-       footer {visibility: hidden;}
-       </style>
-       """
+# hide_default_format = """
+#        <style>
+#        #MainMenu {visibility: hidden; }
+#        footer {visibility: hidden;}
+#        </style>
+#        """
 st.markdown(hide_default_format, unsafe_allow_html=True)
 
 # End snippet 
@@ -33,9 +33,12 @@ st.markdown(hide_default_format, unsafe_allow_html=True)
 
 st.set_option('deprecation.showPyplotGlobalUse', False)
 
+session_vars = ('target_chosen','chart_chosen', 'done_charts', 'set_features', 'fit_model', 'imp_chart', 'predict', 'set_predict')
 
-if 'target_chosen' not in st.session_state:
-    st.session_state.target_chosen = False
+for sess in session_vars:    
+    if sess not in st.session_state:
+         
+        st.session_state.target_chosen = False
     
 if 'chart_chosen' not in st.session_state:
     st.session_state.chart_chosen = False
